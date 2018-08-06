@@ -25,6 +25,6 @@ public class Stripbackgroundmover : MonoBehaviour {
         float offsetX = Mathf.Floor(newPosition / maxY) * 0.25f;
         GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(startingVec.x + offsetX, startingVec.y));
         transform.position = startingPos + Vector3.back * (newPosition % maxY);
-
+        (transform.GetChild(0).gameObject).GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(startingVec.x + offsetX, startingVec.y));
     }
 }
